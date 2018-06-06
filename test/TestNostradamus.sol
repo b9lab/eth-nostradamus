@@ -37,7 +37,7 @@ contract TestNostradamus {
     }
 
     function propheciseAsCall(Nostradamus nostra, bytes32 theWord) private returns(bool success) {
-        return nostra.call(bytes4(keccak256("prophecise(bytes32)")), theWord);
+        return address(nostra).call(bytes4(keccak256("prophecise(bytes32)")), theWord);
     }
     
 }

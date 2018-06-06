@@ -1,4 +1,4 @@
-pragma solidity ^0.4.18;
+pragma solidity 0.4.21;
 
 contract Nostradamus {
     mapping (address => bool) public prophets;
@@ -13,7 +13,7 @@ contract Nostradamus {
         bytes32 blockHash = block.blockhash(blockNumber);
         require(keccak256(msg.sender, blockNumber, blockHash, block.timestamp, this) == exact);
         prophets[msg.sender] = true;
-        LogProphecised(msg.sender, exact);
+        emit LogProphecised(msg.sender, exact);
     }
 
     function theWord() public view returns(bytes32 exact) {
