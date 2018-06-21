@@ -2522,9 +2522,9 @@
     "3": {
       "events": {},
       "links": {},
-      "address": "0xdf55711E587030EaD671E02097c962a256564190",
-      "transactionHash": "0x4d6ffcaaa71ca6bb3dde1ec0164bdf70c113948c388562858640e5852d7a9c31",
-      "updated_at": 1529329738296
+      "address": "0x1AB84C15dA71bF2c74C1b92830d7151F2B445197",
+      "transactionHash": "0x6a5a2ddfb3e646a65bd72cdf6c068551560b3f7ab81850b780cb9fdfc4f2b73a",
+      "updated_at": 1529597157437
     }
   },
   "schemaVersion": "2.0.0",
