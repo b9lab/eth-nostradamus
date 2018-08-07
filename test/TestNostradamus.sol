@@ -10,8 +10,8 @@ contract TestNostradamus {
         Nostradamus nostra = new Nostradamus();
         Assert.isFalse(nostra.prophets(this), "should start not prophet");
         uint blockNumber = block.number;
-        bytes32 blockHash = block.blockhash(blockNumber);
-        bytes32 theWord = keccak256(this, blockNumber, blockHash, block.timestamp, nostra);
+        bytes32 blockHash = blockhash(blockNumber);
+        bytes32 theWord = keccak256(abi.encodePacked(this, blockNumber, blockHash, block.timestamp, nostra));
         nostra.prophecise(theWord);
         Assert.isTrue(nostra.prophets(this), "should end up as prophet");
     }
@@ -20,8 +20,8 @@ contract TestNostradamus {
         Nostradamus nostra = new Nostradamus();
         Assert.isFalse(nostra.prophets(this), "should start not prophet");
         uint blockNumber = block.number;
-        bytes32 blockHash = block.blockhash(blockNumber);
-        bytes32 theWord = keccak256(this, blockNumber, blockHash, block.timestamp, nostra);
+        bytes32 blockHash = blockhash(blockNumber);
+        bytes32 theWord = keccak256(abi.encodePacked(this, blockNumber, blockHash, block.timestamp, nostra));
         bool callResult = propheciseAsCall(nostra, theWord);
         Assert.isTrue(callResult, "should have accepted");
         Assert.isTrue(nostra.prophets(this), "should end up as prophet");
