@@ -11,7 +11,7 @@ contract TestProphet {
         Nostradamus nostra = new Nostradamus();
         Prophet prophet = new Prophet();
         Assert.isFalse(nostra.prophets(prophet), "should start not prophet");
-        prophet.propheciseWith(nostra);
+        prophet.propheciseWith(nostra, "made it");
         Assert.isTrue(nostra.prophets(prophet), "should end up as prophet");
     }
 
