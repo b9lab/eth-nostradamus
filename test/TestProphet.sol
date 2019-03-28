@@ -1,4 +1,4 @@
-pragma solidity ^0.4.2;
+pragma solidity 0.5.0;
 
 import "truffle/Assert.sol";
 import "truffle/DeployedAddresses.sol";
@@ -10,9 +10,9 @@ contract TestProphet {
     function testCanProphecise() public {
         Nostradamus nostra = new Nostradamus();
         Prophet prophet = new Prophet();
-        Assert.isFalse(nostra.prophets(prophet), "should start not prophet");
+        Assert.isFalse(nostra.prophets(address(prophet)), "should start not prophet");
         prophet.propheciseWith(nostra, "made it");
-        Assert.isTrue(nostra.prophets(prophet), "should end up as prophet");
+        Assert.isTrue(nostra.prophets(address(prophet)), "should end up as prophet");
     }
 
 }

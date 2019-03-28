@@ -1,4 +1,4 @@
-pragma solidity 0.4.24;
+pragma solidity 0.5.0;
 
 import "./Nostradamus.sol";
 
@@ -7,6 +7,6 @@ contract Prophet {
         uint blockNumber = block.number;
         bytes32 blockHash = blockhash(blockNumber);
         nostra.prophecise(keccak256(abi.encodePacked(this, blockNumber, blockHash, block.timestamp, nostra)), braggingRights);
-        assert(nostra.prophets(this));
+        assert(nostra.prophets(address(this)));
     }
 }
