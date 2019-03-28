@@ -8,7 +8,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "truffle": "4.1.13"
+    "truffle": "5.0.8"
   },
   "scripts": {
     "test": "mocha"
