@@ -1,4 +1,4 @@
-pragma solidity 0.5.0;
+pragma solidity 0.5.16;
 
 import "truffle/Assert.sol";
 import "truffle/DeployedAddresses.sol";
@@ -42,5 +42,5 @@ contract TestNostradamus {
             theWord,
             braggingRights));
     }
-    
+
 }
