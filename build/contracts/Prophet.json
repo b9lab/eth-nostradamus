@@ -5,10 +5,12 @@
       "constant": false,
       "inputs": [
         {
+          "internalType": "contract Nostradamus",
           "name": "nostra",
           "type": "address"
         },
         {
+          "internalType": "bytes32",
           "name": "braggingRights",
           "type": "bytes32"
         }
@@ -20,14 +22,15 @@
       "type": "function"
     }
   ],
-  "bytecode": "0x608060405234801561001057600080fd5b50610305806100206000396000f3fe608060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063e8afb5b614610046575b600080fd5b34801561005257600080fd5b5061009f6004803603604081101561006957600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803590602001909291905050506100a1565b005b60004390506000814090508373ffffffffffffffffffffffffffffffffffffffff1663551336c53084844289604051602001808673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166c010000000000000000000000000281526014018581526020018481526020018381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166c010000000000000000000000000281526014019550505050505060405160208183030381529060405280519060200120856040518363ffffffff167c01000000000000000000000000000000000000000000000000000000000281526004018083815260200182815260200192505050600060405180830381600087803b1580156101df57600080fd5b505af11580156101f3573d6000803e3d6000fd5b505050508373ffffffffffffffffffffffffffffffffffffffff166396570f4c306040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060206040518083038186803b15801561029057600080fd5b505afa1580156102a4573d6000803e3d6000fd5b505050506040513d60208110156102ba57600080fd5b810190808051906020019092919050505015156102d357fe5b5050505056fea165627a7a7230582060c2723808e906dd1c16dd3dac538ae78f88ef204745d1f21eab0db5834ce4420029",
-  "deployedBytecode": "0x608060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063e8afb5b614610046575b600080fd5b34801561005257600080fd5b5061009f6004803603604081101561006957600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803590602001909291905050506100a1565b005b60004390506000814090508373ffffffffffffffffffffffffffffffffffffffff1663551336c53084844289604051602001808673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166c010000000000000000000000000281526014018581526020018481526020018381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166c010000000000000000000000000281526014019550505050505060405160208183030381529060405280519060200120856040518363ffffffff167c01000000000000000000000000000000000000000000000000000000000281526004018083815260200182815260200192505050600060405180830381600087803b1580156101df57600080fd5b505af11580156101f3573d6000803e3d6000fd5b505050508373ffffffffffffffffffffffffffffffffffffffff166396570f4c306040518263ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060206040518083038186803b15801561029057600080fd5b505afa1580156102a4573d6000803e3d6000fd5b505050506040513d60208110156102ba57600080fd5b810190808051906020019092919050505015156102d357fe5b5050505056fea165627a7a7230582060c2723808e906dd1c16dd3dac538ae78f88ef204745d1f21eab0db5834ce4420029",
-  "sourceMap": "53:375:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;53:375:2;;;;;;;",
-  "deployedSourceMap": "53:375:2:-;;;;;;;;;;;;;;;;;;;;;;;;76:350;;8:9:-1;5:2;;;30:1;27;20:12;5:2;76:350:2;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;76:350:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;161:16;180:12;161:31;;202:17;232:11;222:22;202:42;;254:6;:17;;;299:4;305:11;318:9;329:15;346:6;282:71;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;49:4:-1;39:7;30;26:21;22:32;13:7;6:49;282:71:2;;;272:82;;;;;;356:14;254:117;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;254:117:2;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;254:117:2;;;;388:6;:15;;;412:4;388:30;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;388:30:2;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;388:30:2;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;388:30:2;;;;;;;;;;;;;;;;381:38;;;;;;76:350;;;;:::o",
-  "source": "pragma solidity 0.5.0;\n\nimport \"./Nostradamus.sol\";\n\ncontract Prophet {\n    function propheciseWith(Nostradamus nostra, bytes32 braggingRights) public {\n        uint blockNumber = block.number;\n        bytes32 blockHash = blockhash(blockNumber);\n        nostra.prophecise(keccak256(abi.encodePacked(this, blockNumber, blockHash, block.timestamp, nostra)), braggingRights);\n        assert(nostra.prophets(address(this)));\n    }\n}",
-  "sourcePath": "/home/vagrant/DAPPS/b9internal/nostradamus/contracts/Prophet.sol",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"contract Nostradamus\",\"name\":\"nostra\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"braggingRights\",\"type\":\"bytes32\"}],\"name\":\"propheciseWith\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/vagrant/DAPPS/b9lab/eth/eth-nostradamus/contracts/Prophet.sol\":\"Prophet\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/vagrant/DAPPS/b9lab/eth/eth-nostradamus/contracts/Nostradamus.sol\":{\"keccak256\":\"0x22541a427d8140f9717c304a7f1ed7012aa4e2b8d9bffac1ec97fda360682a8c\",\"urls\":[\"bzz-raw://6a5d5ef6fcd125791c341a281f745ba0b639538ab62d67e29fd67fbcebe0e7b8\",\"dweb:/ipfs/QmQrWbjDW5j2LKNgZEe7GgzMZcpeVCkLCPZp7V8dgqugsu\"]},\"/home/vagrant/DAPPS/b9lab/eth/eth-nostradamus/contracts/Prophet.sol\":{\"keccak256\":\"0x274abf1d473a00295b63afb9b5db8c7355fff13c7af205e20541feafd24c4487\",\"urls\":[\"bzz-raw://1b77fdc134b0de2ef69357e9f3b01b4688b9c9eeedae9484eaa552ab4893364d\",\"dweb:/ipfs/QmfH68V59EEcuKdZo4YLgDLSG4UqjKQ6KPqMoQ479PjmeZ\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610299806100206000396000f3fe608060405234801561001057600080fd5b506004361061002b5760003560e01c8063e8afb5b614610030575b600080fd5b61007c6004803603604081101561004657600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019092919050505061007e565b005b60004390506000814090508373ffffffffffffffffffffffffffffffffffffffff1663551336c53084844289604051602001808673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1660601b81526014018581526020018481526020018381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1660601b81526014019550505050505060405160208183030381529060405280519060200120856040518363ffffffff1660e01b81526004018083815260200182815260200192505050600060405180830381600087803b15801561018857600080fd5b505af115801561019c573d6000803e3d6000fd5b505050508373ffffffffffffffffffffffffffffffffffffffff166396570f4c306040518263ffffffff1660e01b8152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060206040518083038186803b15801561021d57600080fd5b505afa158015610231573d6000803e3d6000fd5b505050506040513d602081101561024757600080fd5b810190808051906020019092919050505061025e57fe5b5050505056fea265627a7a72315820bd8251a6fc2b6d75c5fa7416187714104417e49466645e5517db50974a26eb8b64736f6c63430005100032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061002b5760003560e01c8063e8afb5b614610030575b600080fd5b61007c6004803603604081101561004657600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019092919050505061007e565b005b60004390506000814090508373ffffffffffffffffffffffffffffffffffffffff1663551336c53084844289604051602001808673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1660601b81526014018581526020018481526020018381526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1660601b81526014019550505050505060405160208183030381529060405280519060200120856040518363ffffffff1660e01b81526004018083815260200182815260200192505050600060405180830381600087803b15801561018857600080fd5b505af115801561019c573d6000803e3d6000fd5b505050508373ffffffffffffffffffffffffffffffffffffffff166396570f4c306040518263ffffffff1660e01b8152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060206040518083038186803b15801561021d57600080fd5b505afa158015610231573d6000803e3d6000fd5b505050506040513d602081101561024757600080fd5b810190808051906020019092919050505061025e57fe5b5050505056fea265627a7a72315820bd8251a6fc2b6d75c5fa7416187714104417e49466645e5517db50974a26eb8b64736f6c63430005100032",
+  "sourceMap": "54:375:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;54:375:2;;;;;;;",
+  "deployedSourceMap": "54:375:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;54:375:2;;;;;;;;;;;;;;;;;;;77:350;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;77:350:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;162:16;181:12;162:31;;203:17;233:11;223:22;203:42;;255:6;:17;;;300:4;306:11;319:9;330:15;347:6;283:71;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;49:4:-1;39:7;30;26:21;22:32;13:7;6:49;283:71:2;;;273:82;;;;;;357:14;255:117;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;255:117:2;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;255:117:2;;;;389:6;:15;;;413:4;389:30;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;389:30:2;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;389:30:2;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;389:30:2;;;;;;;;;;;;;;;;382:38;;;;77:350;;;;:::o",
+  "source": "pragma solidity 0.5.16;\n\nimport \"./Nostradamus.sol\";\n\ncontract Prophet {\n    function propheciseWith(Nostradamus nostra, bytes32 braggingRights) public {\n        uint blockNumber = block.number;\n        bytes32 blockHash = blockhash(blockNumber);\n        nostra.prophecise(keccak256(abi.encodePacked(this, blockNumber, blockHash, block.timestamp, nostra)), braggingRights);\n        assert(nostra.prophets(address(this)));\n    }\n}\n",
+  "sourcePath": "/home/vagrant/DAPPS/b9lab/eth/eth-nostradamus/contracts/Prophet.sol",
   "ast": {
-    "absolutePath": "/home/vagrant/DAPPS/b9internal/nostradamus/contracts/Prophet.sol",
+    "absolutePath": "/home/vagrant/DAPPS/b9lab/eth/eth-nostradamus/contracts/Prophet.sol",
     "exportedSymbols": {
       "Prophet": [
         205
@@ -41,19 +44,19 @@
         "literals": [
           "solidity",
           "0.5",
-          ".0"
+          ".16"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:22:2"
+        "src": "0:23:2"
       },
       {
-        "absolutePath": "/home/vagrant/DAPPS/b9internal/nostradamus/contracts/Nostradamus.sol",
+        "absolutePath": "/home/vagrant/DAPPS/b9lab/eth/eth-nostradamus/contracts/Nostradamus.sol",
         "file": "./Nostradamus.sol",
         "id": 159,
         "nodeType": "ImportDirective",
         "scope": 206,
         "sourceUnit": 157,
-        "src": "24:27:2",
+        "src": "25:27:2",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -74,7 +77,7 @@
             "body": {
               "id": 203,
               "nodeType": "Block",
-              "src": "151:275:2",
+              "src": "152:275:2",
               "statements": [
                 {
                   "assignments": [
@@ -87,7 +90,7 @@
                       "name": "blockNumber",
                       "nodeType": "VariableDeclaration",
                       "scope": 203,
-                      "src": "161:16:2",
+                      "src": "162:16:2",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -98,7 +101,7 @@
                         "id": 166,
                         "name": "uint",
                         "nodeType": "ElementaryTypeName",
-                        "src": "161:4:2",
+                        "src": "162:4:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -118,7 +121,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 210,
-                      "src": "180:5:2",
+                      "src": "181:5:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_magic_block",
                         "typeString": "block"
@@ -132,14 +135,14 @@
                     "memberName": "number",
                     "nodeType": "MemberAccess",
                     "referencedDeclaration": null,
-                    "src": "180:12:2",
+                    "src": "181:12:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "161:31:2"
+                  "src": "162:31:2"
                 },
                 {
                   "assignments": [
@@ -152,7 +155,7 @@
                       "name": "blockHash",
                       "nodeType": "VariableDeclaration",
                       "scope": 203,
-                      "src": "202:17:2",
+                      "src": "203:17:2",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -163,7 +166,7 @@
                         "id": 171,
                         "name": "bytes32",
                         "nodeType": "ElementaryTypeName",
-                        "src": "202:7:2",
+                        "src": "203:7:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -184,7 +187,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 167,
-                        "src": "232:11:2",
+                        "src": "233:11:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -203,7 +206,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 211,
-                      "src": "222:9:2",
+                      "src": "223:9:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_blockhash_view$_t_uint256_$returns$_t_bytes32_$",
                         "typeString": "function (uint256) view returns (bytes32)"
@@ -217,14 +220,14 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "222:22:2",
+                    "src": "223:22:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "202:42:2"
+                  "src": "203:42:2"
                 },
                 {
                   "expression": {
@@ -242,8 +245,8 @@
                                 "name": "this",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 237,
-                                "src": "299:4:2",
+                                "referencedDeclaration": 238,
+                                "src": "300:4:2",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_contract$_Prophet_$205",
                                   "typeString": "contract Prophet"
@@ -256,7 +259,7 @@
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
                                 "referencedDeclaration": 167,
-                                "src": "305:11:2",
+                                "src": "306:11:2",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
@@ -269,7 +272,7 @@
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
                                 "referencedDeclaration": 172,
-                                "src": "318:9:2",
+                                "src": "319:9:2",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_bytes32",
                                   "typeString": "bytes32"
@@ -284,7 +287,7 @@
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
                                   "referencedDeclaration": 210,
-                                  "src": "329:5:2",
+                                  "src": "330:5:2",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_magic_block",
                                     "typeString": "block"
@@ -298,7 +301,7 @@
                                 "memberName": "timestamp",
                                 "nodeType": "MemberAccess",
                                 "referencedDeclaration": null,
-                                "src": "329:15:2",
+                                "src": "330:15:2",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
@@ -311,7 +314,7 @@
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
                                 "referencedDeclaration": 161,
-                                "src": "346:6:2",
+                                "src": "347:6:2",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_contract$_Nostradamus_$156",
                                   "typeString": "contract Nostradamus"
@@ -348,7 +351,7 @@
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
                                 "referencedDeclaration": 207,
-                                "src": "282:3:2",
+                                "src": "283:3:2",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_magic_abi",
                                   "typeString": "abi"
@@ -362,7 +365,7 @@
                               "memberName": "encodePacked",
                               "nodeType": "MemberAccess",
                               "referencedDeclaration": null,
-                              "src": "282:16:2",
+                              "src": "283:16:2",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_abiencodepacked_pure$__$returns$_t_bytes_memory_ptr_$",
                                 "typeString": "function () pure returns (bytes memory)"
@@ -376,7 +379,7 @@
                             "lValueRequested": false,
                             "names": [],
                             "nodeType": "FunctionCall",
-                            "src": "282:71:2",
+                            "src": "283:71:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes_memory_ptr",
                               "typeString": "bytes memory"
@@ -395,7 +398,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 214,
-                          "src": "272:9:2",
+                          "src": "273:9:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
                             "typeString": "function (bytes memory) pure returns (bytes32)"
@@ -409,7 +412,7 @@
                         "lValueRequested": false,
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "272:82:2",
+                        "src": "273:82:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -422,7 +425,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 163,
-                        "src": "356:14:2",
+                        "src": "357:14:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -447,7 +450,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 161,
-                        "src": "254:6:2",
+                        "src": "255:6:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_contract$_Nostradamus_$156",
                           "typeString": "contract Nostradamus"
@@ -461,7 +464,7 @@
                       "memberName": "prophecise",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 124,
-                      "src": "254:17:2",
+                      "src": "255:17:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_bytes32_$_t_bytes32_$returns$__$",
                         "typeString": "function (bytes32,bytes32) external"
@@ -475,7 +478,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "254:117:2",
+                    "src": "255:117:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -483,7 +486,7 @@
                   },
                   "id": 193,
                   "nodeType": "ExpressionStatement",
-                  "src": "254:117:2"
+                  "src": "255:117:2"
                 },
                 {
                   "expression": {
@@ -501,8 +504,8 @@
                                 "name": "this",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 237,
-                                "src": "412:4:2",
+                                "referencedDeclaration": 238,
+                                "src": "413:4:2",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_contract$_Prophet_$205",
                                   "typeString": "contract Prophet"
@@ -522,7 +525,7 @@
                               "isPure": true,
                               "lValueRequested": false,
                               "nodeType": "ElementaryTypeNameExpression",
-                              "src": "404:7:2",
+                              "src": "405:7:2",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_type$_t_address_$",
                                 "typeString": "type(address)"
@@ -537,7 +540,7 @@
                             "lValueRequested": false,
                             "names": [],
                             "nodeType": "FunctionCall",
-                            "src": "404:13:2",
+                            "src": "405:13:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -558,7 +561,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 161,
-                            "src": "388:6:2",
+                            "src": "389:6:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_contract$_Nostradamus_$156",
                               "typeString": "contract Nostradamus"
@@ -572,7 +575,7 @@
                           "memberName": "prophets",
                           "nodeType": "MemberAccess",
                           "referencedDeclaration": 62,
-                          "src": "388:15:2",
+                          "src": "389:15:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_bool_$",
                             "typeString": "function (address) view external returns (bool)"
@@ -586,7 +589,7 @@
                         "lValueRequested": false,
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "388:30:2",
+                        "src": "389:30:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -605,7 +608,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 209,
-                      "src": "381:6:2",
+                      "src": "382:6:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_assert_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
@@ -619,7 +622,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "381:38:2",
+                    "src": "382:38:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -627,7 +630,7 @@
                   },
                   "id": 202,
                   "nodeType": "ExpressionStatement",
-                  "src": "381:38:2"
+                  "src": "382:38:2"
                 }
               ]
             },
@@ -648,7 +651,7 @@
                   "name": "nostra",
                   "nodeType": "VariableDeclaration",
                   "scope": 204,
-                  "src": "100:18:2",
+                  "src": "101:18:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -661,7 +664,7 @@
                     "name": "Nostradamus",
                     "nodeType": "UserDefinedTypeName",
                     "referencedDeclaration": 156,
-                    "src": "100:11:2",
+                    "src": "101:11:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_contract$_Nostradamus_$156",
                       "typeString": "contract Nostradamus"
@@ -676,7 +679,7 @@
                   "name": "braggingRights",
                   "nodeType": "VariableDeclaration",
                   "scope": 204,
-                  "src": "120:22:2",
+                  "src": "121:22:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -687,7 +690,7 @@
                     "id": 162,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "120:7:2",
+                    "src": "121:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -697,29 +700,29 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "99:44:2"
+              "src": "100:44:2"
             },
             "returnParameters": {
               "id": 165,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "151:0:2"
+              "src": "152:0:2"
             },
             "scope": 205,
-            "src": "76:350:2",
+            "src": "77:350:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
         "scope": 206,
-        "src": "53:375:2"
+        "src": "54:375:2"
       }
     ],
-    "src": "0:428:2"
+    "src": "0:430:2"
   },
   "legacyAST": {
-    "absolutePath": "/home/vagrant/DAPPS/b9internal/nostradamus/contracts/Prophet.sol",
+    "absolutePath": "/home/vagrant/DAPPS/b9lab/eth/eth-nostradamus/contracts/Prophet.sol",
     "exportedSymbols": {
       "Prophet": [
         205
@@ -733,19 +736,19 @@
         "literals": [
           "solidity",
           "0.5",
-          ".0"
+          ".16"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:22:2"
+        "src": "0:23:2"
       },
       {
-        "absolutePath": "/home/vagrant/DAPPS/b9internal/nostradamus/contracts/Nostradamus.sol",
+        "absolutePath": "/home/vagrant/DAPPS/b9lab/eth/eth-nostradamus/contracts/Nostradamus.sol",
         "file": "./Nostradamus.sol",
         "id": 159,
         "nodeType": "ImportDirective",
         "scope": 206,
         "sourceUnit": 157,
-        "src": "24:27:2",
+        "src": "25:27:2",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -766,7 +769,7 @@
             "body": {
               "id": 203,
               "nodeType": "Block",
-              "src": "151:275:2",
+              "src": "152:275:2",
               "statements": [
                 {
                   "assignments": [
@@ -779,7 +782,7 @@
                       "name": "blockNumber",
                       "nodeType": "VariableDeclaration",
                       "scope": 203,
-                      "src": "161:16:2",
+                      "src": "162:16:2",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -790,7 +793,7 @@
                         "id": 166,
                         "name": "uint",
                         "nodeType": "ElementaryTypeName",
-                        "src": "161:4:2",
+                        "src": "162:4:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -810,7 +813,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 210,
-                      "src": "180:5:2",
+                      "src": "181:5:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_magic_block",
                         "typeString": "block"
@@ -824,14 +827,14 @@
                     "memberName": "number",
                     "nodeType": "MemberAccess",
                     "referencedDeclaration": null,
-                    "src": "180:12:2",
+                    "src": "181:12:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "161:31:2"
+                  "src": "162:31:2"
                 },
                 {
                   "assignments": [
@@ -844,7 +847,7 @@
                       "name": "blockHash",
                       "nodeType": "VariableDeclaration",
                       "scope": 203,
-                      "src": "202:17:2",
+                      "src": "203:17:2",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -855,7 +858,7 @@
                         "id": 171,
                         "name": "bytes32",
                         "nodeType": "ElementaryTypeName",
-                        "src": "202:7:2",
+                        "src": "203:7:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -876,7 +879,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 167,
-                        "src": "232:11:2",
+                        "src": "233:11:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -895,7 +898,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 211,
-                      "src": "222:9:2",
+                      "src": "223:9:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_blockhash_view$_t_uint256_$returns$_t_bytes32_$",
                         "typeString": "function (uint256) view returns (bytes32)"
@@ -909,14 +912,14 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "222:22:2",
+                    "src": "223:22:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "202:42:2"
+                  "src": "203:42:2"
                 },
                 {
                   "expression": {
@@ -934,8 +937,8 @@
                                 "name": "this",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 237,
-                                "src": "299:4:2",
+                                "referencedDeclaration": 238,
+                                "src": "300:4:2",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_contract$_Prophet_$205",
                                   "typeString": "contract Prophet"
@@ -948,7 +951,7 @@
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
                                 "referencedDeclaration": 167,
-                                "src": "305:11:2",
+                                "src": "306:11:2",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
@@ -961,7 +964,7 @@
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
                                 "referencedDeclaration": 172,
-                                "src": "318:9:2",
+                                "src": "319:9:2",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_bytes32",
                                   "typeString": "bytes32"
@@ -976,7 +979,7 @@
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
                                   "referencedDeclaration": 210,
-                                  "src": "329:5:2",
+                                  "src": "330:5:2",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_magic_block",
                                     "typeString": "block"
@@ -990,7 +993,7 @@
                                 "memberName": "timestamp",
                                 "nodeType": "MemberAccess",
                                 "referencedDeclaration": null,
-                                "src": "329:15:2",
+                                "src": "330:15:2",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
@@ -1003,7 +1006,7 @@
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
                                 "referencedDeclaration": 161,
-                                "src": "346:6:2",
+                                "src": "347:6:2",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_contract$_Nostradamus_$156",
                                   "typeString": "contract Nostradamus"
@@ -1040,7 +1043,7 @@
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
                                 "referencedDeclaration": 207,
-                                "src": "282:3:2",
+                                "src": "283:3:2",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_magic_abi",
                                   "typeString": "abi"
@@ -1054,7 +1057,7 @@
                               "memberName": "encodePacked",
                               "nodeType": "MemberAccess",
                               "referencedDeclaration": null,
-                              "src": "282:16:2",
+                              "src": "283:16:2",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_abiencodepacked_pure$__$returns$_t_bytes_memory_ptr_$",
                                 "typeString": "function () pure returns (bytes memory)"
@@ -1068,7 +1071,7 @@
                             "lValueRequested": false,
                             "names": [],
                             "nodeType": "FunctionCall",
-                            "src": "282:71:2",
+                            "src": "283:71:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes_memory_ptr",
                               "typeString": "bytes memory"
@@ -1087,7 +1090,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 214,
-                          "src": "272:9:2",
+                          "src": "273:9:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
                             "typeString": "function (bytes memory) pure returns (bytes32)"
@@ -1101,7 +1104,7 @@
                         "lValueRequested": false,
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "272:82:2",
+                        "src": "273:82:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -1114,7 +1117,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 163,
-                        "src": "356:14:2",
+                        "src": "357:14:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -1139,7 +1142,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 161,
-                        "src": "254:6:2",
+                        "src": "255:6:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_contract$_Nostradamus_$156",
                           "typeString": "contract Nostradamus"
@@ -1153,7 +1156,7 @@
                       "memberName": "prophecise",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 124,
-                      "src": "254:17:2",
+                      "src": "255:17:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_bytes32_$_t_bytes32_$returns$__$",
                         "typeString": "function (bytes32,bytes32) external"
@@ -1167,7 +1170,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "254:117:2",
+                    "src": "255:117:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -1175,7 +1178,7 @@
                   },
                   "id": 193,
                   "nodeType": "ExpressionStatement",
-                  "src": "254:117:2"
+                  "src": "255:117:2"
                 },
                 {
                   "expression": {
@@ -1193,8 +1196,8 @@
                                 "name": "this",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 237,
-                                "src": "412:4:2",
+                                "referencedDeclaration": 238,
+                                "src": "413:4:2",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_contract$_Prophet_$205",
                                   "typeString": "contract Prophet"
@@ -1214,7 +1217,7 @@
                               "isPure": true,
                               "lValueRequested": false,
                               "nodeType": "ElementaryTypeNameExpression",
-                              "src": "404:7:2",
+                              "src": "405:7:2",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_type$_t_address_$",
                                 "typeString": "type(address)"
@@ -1229,7 +1232,7 @@
                             "lValueRequested": false,
                             "names": [],
                             "nodeType": "FunctionCall",
-                            "src": "404:13:2",
+                            "src": "405:13:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -1250,7 +1253,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 161,
-                            "src": "388:6:2",
+                            "src": "389:6:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_contract$_Nostradamus_$156",
                               "typeString": "contract Nostradamus"
@@ -1264,7 +1267,7 @@
                           "memberName": "prophets",
                           "nodeType": "MemberAccess",
                           "referencedDeclaration": 62,
-                          "src": "388:15:2",
+                          "src": "389:15:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_bool_$",
                             "typeString": "function (address) view external returns (bool)"
@@ -1278,7 +1281,7 @@
                         "lValueRequested": false,
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "388:30:2",
+                        "src": "389:30:2",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -1297,7 +1300,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 209,
-                      "src": "381:6:2",
+                      "src": "382:6:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_assert_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
@@ -1311,7 +1314,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "381:38:2",
+                    "src": "382:38:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -1319,7 +1322,7 @@
                   },
                   "id": 202,
                   "nodeType": "ExpressionStatement",
-                  "src": "381:38:2"
+                  "src": "382:38:2"
                 }
               ]
             },
@@ -1340,7 +1343,7 @@
                   "name": "nostra",
                   "nodeType": "VariableDeclaration",
                   "scope": 204,
-                  "src": "100:18:2",
+                  "src": "101:18:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1353,7 +1356,7 @@
                     "name": "Nostradamus",
                     "nodeType": "UserDefinedTypeName",
                     "referencedDeclaration": 156,
-                    "src": "100:11:2",
+                    "src": "101:11:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_contract$_Nostradamus_$156",
                       "typeString": "contract Nostradamus"
@@ -1368,7 +1371,7 @@
                   "name": "braggingRights",
                   "nodeType": "VariableDeclaration",
                   "scope": 204,
-                  "src": "120:22:2",
+                  "src": "121:22:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1379,7 +1382,7 @@
                     "id": 162,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "120:7:2",
+                    "src": "121:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -1389,34 +1392,34 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "99:44:2"
+              "src": "100:44:2"
             },
             "returnParameters": {
               "id": 165,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "151:0:2"
+              "src": "152:0:2"
             },
             "scope": 205,
-            "src": "76:350:2",
+            "src": "77:350:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
         "scope": 206,
-        "src": "53:375:2"
+        "src": "54:375:2"
       }
     ],
-    "src": "0:428:2"
+    "src": "0:430:2"
   },
   "compiler": {
     "name": "solc",
-    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.0.3",
-  "updatedAt": "2019-03-28T14:43:17.139Z",
+  "schemaVersion": "3.2.0",
+  "updatedAt": "2020-06-23T17:44:24.635Z",
   "devdoc": {
     "methods": {}
   },
